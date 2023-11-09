@@ -97,3 +97,17 @@
 {% macro bigquery__type_int() %}
     int64
 {% endmacro %}
+
+  {# money  -------------------------------------------------     #}
+
+{%- macro type_money() -%}
+  {{ return(adapter.dispatch('type_money', 'dbt_utils')()) }}
+{%- endmacro -%}
+
+{% macro default__type_money() %}
+    decimal(19,4)
+{% endmacro %}
+
+{% macro mysql__type_money() %}
+    decimal(19,4)
+{% endmacro %}
