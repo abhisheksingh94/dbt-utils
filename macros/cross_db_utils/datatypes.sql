@@ -98,7 +98,7 @@
     int64
 {% endmacro %}
 
-  {# money  -------------------------------------------------     #}
+{# money  -------------------------------------------------     #}
 
 {%- macro type_money() -%}
   {{ return(adapter.dispatch('type_money', 'dbt_utils')()) }}
